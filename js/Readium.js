@@ -141,7 +141,8 @@ define(['readium_shared_js/globals', 'text!version.json', 'jquery', 'underscore'
                     var options = {
                         metadata: packageDocument.getMetadata()
                     };
-
+                    if(openPageRequest && openPageRequest.percent)
+                        options.percent = openPageRequest.percent;
                     callback(packageDocument, options);
                 });
             });
